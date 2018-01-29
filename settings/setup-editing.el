@@ -56,7 +56,10 @@
 (use-package yasnippet
   :defer t
   :init
-  (add-hook 'prog-mode-hook 'yas-minor-mode))
+  (use-package yasnippet-snippets)
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
+  :config
+  (yas-reload-all))
 
 ;; Package: clean-aindent-mode
 (use-package clean-aindent-mode
@@ -68,6 +71,10 @@
   :init
   (dtrt-indent-mode 1)
   (setq dtrt-indent-verbosity 0))
+
+(use-package fill-column-indicator
+  :init
+  (add-hook 'prog-mode-hook 'fci-mode))
 
 ;; Package: ws-butler
 (use-package ws-butler

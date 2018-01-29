@@ -9,7 +9,7 @@
  '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
  '(package-selected-packages
    (quote
-    (switch-buffer-functions uniquify smooth-scrolling helm-config zygospore use-package company-c-headers company helm-projectile helm-gtags dired helm projectile magit flycheck-pos-tip flycheck bash-completion undo-tree neotree shell-command smartparens neotree))))
+    (rtags cmake-ide dired+ cpputils-cmake cmake-font-lock cmake-mode helm-make fill-column-indicator indent-guide yasnippet-snippets switch-buffer-functions uniquify smooth-scrolling helm-config zygospore use-package company-c-headers company helm-projectile helm-gtags dired helm projectile magit flycheck-pos-tip flycheck bash-completion undo-tree neotree shell-command smartparens neotree))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

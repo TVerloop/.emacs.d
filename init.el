@@ -28,7 +28,8 @@
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
   (require 'setup-helm)
-  (require 'setup-helm-gtags))
+  ;;(require 'setup-helm-gtags)
+  )
 (require 'setup-cedet)
 (require 'setup-editing)
 
@@ -38,10 +39,6 @@
   (when (file-regular-p file)
     (load file)))
 
-;; Setup appearance
-(require 'appearance)
-;; Setup key-bindings
-(require 'key-bindings)
 ;; Apply sanity to emacs
 (require 'sane-defaults)
 
