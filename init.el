@@ -10,6 +10,9 @@
 (setq settings-dir
       (expand-file-name "settings" user-emacs-directory))
 
+(if (file-directory-p site-lisp-dir) nil
+  (make-directory site-lisp-dir))
+
 ;; Add custom functions from defuns dir
 (setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
 (dolist (file (directory-files defuns-dir t "\\w+"))
