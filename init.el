@@ -30,6 +30,7 @@
 
 (require 'setup-package)
 
+(require 'setup-doom-themes)
 (require 'setup-general)
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)

@@ -1,13 +1,7 @@
-(use-package neotree)
-(use-package projectile)
+(defun neotree-toggle-and-switch-back ()
+  (neotree-toggle)
+  (other-window -1))
 
-;; Set ascii theme
-(setq neo-theme 'ascii)
-
-;; Neotree automatically switch to project
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
-;;
 (defun neotree-project-dir ()
   "Open NeoTree using the git root."
   (interactive)
@@ -21,7 +15,14 @@
               (neotree-find file-name)))
       (message "Could not find git project root."))))
 
-(global-set-key [f8] (lambda ()
-                        (neotree-project-dir)))
+(use-package neotree
+  :init
+  (use-package projectile
+    :init
+    ;; Neotree automatically switch to project
+    (setq projectile-switch-project-action 'neotree-projectile-action))
+  (global-set-key [f8] 'neotree-toggle)
+  :config
+  (neotree-toggle-and-switch-back))
 
 (provide 'setup-neotree)
