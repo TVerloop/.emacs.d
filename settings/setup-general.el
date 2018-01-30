@@ -37,7 +37,7 @@
 (setq-default tab-width 4)
 
 ;; Set font size to 9pt
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 90)
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
@@ -57,8 +57,8 @@
 ;; company
 (use-package company
   :init
-  (global-company-mode 1)
-  (delete 'company-semantic company-backends))
+  (global-company-mode 1))
+  ;;(delete 'company-semantic company-backends))
 
 ;; Package: projectile
 (use-package projectile

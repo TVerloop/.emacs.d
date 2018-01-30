@@ -31,6 +31,12 @@
 ;; Add cmake to emacs
 (use-package cmake-mode
   :init
+  (use-package cmake-project
+    :init
+    (defun maybe-cmake-project-hook ()
+      (if (file-exists-p "CMakeLists.txt") (cmake-project-mode)))
+    (add-hook 'c-mode-hook 'maybe-cmake-project-hook)
+    (add-hook 'c++-mode-hook 'maybe-cmake-project-hook))
   (use-package cmake-font-lock
     :init
     (add-hook 'cmake-mode-hook 'cmake-font-lock-activate))
