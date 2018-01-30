@@ -71,3 +71,5 @@
 (require 'setup-flycheck)
 ;; Setup c style
 (require 'setup-c)
+;; Setup Docker mode
+(require 'setup-docker)

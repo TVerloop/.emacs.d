@@ -18,6 +18,9 @@
 ;; set appearance of a tab that is represented by 4 spaces
 (setq-default tab-width 4)
 
+;; Set font size to 9pt
+(set-face-attribute 'default nil :height 100)
+
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
                                (interactive)
