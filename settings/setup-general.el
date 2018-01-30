@@ -37,7 +37,7 @@
 (setq-default tab-width 4)
 
 ;; Set font size to 9pt
-(set-face-attribute 'default nil :height 100)
+(set-face-attribute 'default nil :height 90 :family "monospace")
 
 ;; Compilation
 (global-set-key (kbd "<f5>") (lambda ()
