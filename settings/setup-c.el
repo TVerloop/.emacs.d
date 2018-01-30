@@ -28,4 +28,18 @@
   (define-key c-mode-map  [(tab)] 'company-complete)
   (define-key c++-mode-map  [(tab)] 'company-complete))
 
+;; Add cmake to emacs
+(use-package cmake-mode
+  :init
+  (use-package cmake-font-lock
+    :init
+    (add-hook 'cmake-mode-hook 'cmake-font-lock-activate))
+  :config
+  (setq auto-mode-alist
+        (append
+         '(("CMakeLists\\.txt\\'" . cmake-mode))
+         '(("\\.cmake\\'" . cmake-mode))
+         auto-mode-alist))
+  (define-key cmake-mode-map  [(tab)] 'company-complete))
+
 (provide 'setup-c)

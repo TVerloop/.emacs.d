@@ -2,8 +2,26 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(setq font-lock-maximum-decoration t
+      color-theme-is-global t
+      truncate-partial-width-windows nil)
+
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
+
+(when window-system
+  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (tooltip-mode -1)
+  (blink-cursor-mode -1))
+
+;; Highlight current line
+(global-hl-line-mode 1)
+
+;; Show line numbers
+(global-linum-mode 1)
+
+;; Highlight matching parentheses when the point is on them.
+(show-paren-mode 1)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -65,6 +83,5 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t)       ; use versioned backups
-
 
 (provide 'setup-general)
