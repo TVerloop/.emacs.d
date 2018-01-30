@@ -8,7 +8,7 @@
 
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
-
+(setq frame-resize-pixelwise t)
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
