@@ -5,15 +5,18 @@
 (c-add-style "c-style"
              '("stroustrup"
                (indent-tabs-mode . nil)        ; use spaces rather than tabs
-               (c-basic-offset . 4)            ; indent by four spaces
-               (c-offsets-alist . ((inline-open . 0)  ; custom indentation rules
-                                   (brace-list-open . 0)
-                                   (statement-case-open . +)))))
+               (c-basic-offset . 4)))            ; indent by four spaces
+;               (c-offsets-alist . ((inline-open . 0)  ; custom indentation rules
+;                                   (brace-list-open . 0)
+;                                   (statement-case-open . +)))))
+
+(use-package smartparens)
 
 (defun c-style-mode-hook ()
   (c-set-style "c-style")
   (flycheck-mode 1)
-  (c-toggle-auto-hungry-state 1))
+  (c-toggle-auto-hungry-state 1)
+  (smartparens-mode 1))
 
 ;; apply styles when loaded
 (use-package cc-mode
