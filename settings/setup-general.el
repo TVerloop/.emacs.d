@@ -58,7 +58,6 @@
 (use-package company
   :init
   (global-company-mode 1))
-  ;;(delete 'company-semantic company-backends))
 
 ;; Package: projectile
 (use-package projectile
