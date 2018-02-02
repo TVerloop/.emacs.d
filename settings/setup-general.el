@@ -57,7 +57,8 @@
 ;; company
 (use-package company
   :init
-  (global-company-mode 1))
+  (global-company-mode 1)
+  (delete 'company-clang company-backends))
 
 ;; Package: projectile
 (use-package projectile

@@ -3,7 +3,6 @@
 (use-package helm-ag)
 (use-package helm-projectile)
 (use-package helm-make)
-
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
