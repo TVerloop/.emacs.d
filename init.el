@@ -23,7 +23,6 @@
 
 (require 'setup-package)
 
-(require 'setup-doom-themes)
 (require 'setup-general)
 (if (version< emacs-version "24.4")
     (require 'setup-ivy-counsel)
@@ -39,9 +38,6 @@
   (when (file-regular-p file)
     (load file)))
 
-;; Apply sanity to emacs
-(require 'sane-defaults)
-
 ;; setup shell
 (use-package shell
   :config
@@ -52,8 +48,6 @@
   :config
   (require 'setup-magit))
 
-;; Setup neotree
-(require 'setup-neotree)
 ;; Setup flycheck
 (require 'setup-flycheck)
 ;; Setup c style

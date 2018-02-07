@@ -29,7 +29,9 @@
   (add-hook 'c-mode-hook 'c-style-mode-hook)
   (add-hook 'c++-mode-hook 'c-style-mode-hook)
   (define-key c-mode-map  [(tab)] 'company-complete)
-  (define-key c++-mode-map  [(tab)] 'company-complete))
+  (define-key c++-mode-map  [(tab)] 'company-complete)
+  (define-key c-mode-map  [(C-tab)] 'c-indent-line-or-region)
+  (define-key c++-mode-map  [(C-tab)] 'c-indent-line-or-region))
 
 ;; Add cmake to emacs
 (use-package cmake-mode

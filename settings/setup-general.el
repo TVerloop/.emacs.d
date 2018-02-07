@@ -9,6 +9,16 @@
 (setq gc-cons-threshold 100000000)
 (setq inhibit-startup-message t)
 (setq frame-resize-pixelwise t)
+
+(use-package doom-themes
+  :init
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  :config
+  (load-theme 'doom-one t)
+  (doom-themes-visual-bell-config))
+
+
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
   (tooltip-mode -1)
