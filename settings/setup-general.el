@@ -30,6 +30,9 @@
 ;; Show line numbers
 (global-linum-mode 1)
 
+;; Show column numbers
+(column-number-mode 1)
+
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
