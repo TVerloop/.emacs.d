@@ -74,6 +74,7 @@
 
 (use-package fill-column-indicator
   :init
+  (setq-default fill-column 80)
   (add-hook 'prog-mode-hook 'fci-mode))
 
 ;; Package: ws-butler
