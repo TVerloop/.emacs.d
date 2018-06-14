@@ -36,6 +36,8 @@
 (require 'setup-magit)      ;; Initialize Magit.
 (require 'setup-neotree)    ;; Initialize Neotree.
 (require 'setup-eshell)
+(require 'setup-org-mode)
+
 (req-package-finish)
 
 (provide 'init)
