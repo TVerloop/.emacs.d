@@ -13,11 +13,12 @@
                                      (beginning-of-buffer)
                                      (when (looking-at "#")
                                        (forward-line 2))))
-  (set-default 'magit-push-always-verify nil)
-  (set-default 'magit-revert-buffers 'silent)
-  (set-default 'magit-no-confirm '(stage-all-changes
-                                   unstage-all-changes))
-  (set-default 'magit-diff-refine-hunk t))
+
+  (setq magit-push-always-verify nil
+        magit-revert-buffers 'silent
+        magit-no-confirm '(stage-all-changes
+                           unstage-all-changes)
+        magit-diff-refine-hunk t))
 
 (provide 'setup-magit)
 ;;; setup-magit.el ends here
