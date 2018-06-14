@@ -1,56 +1,42 @@
+;;; Package --- summary
+;;;
+;;; Commentary:
+;;;
+;;; Code:
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
 
-(setq settings-dir
-      (expand-file-name "settings" user-emacs-directory))
-
-;; Add custom functions from defuns dir
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
-
 ;; Add dependencies to load path
-(add-to-list 'load-path settings-dir)
+(add-to-list 'load-path
+	     (expand-file-name "init.d" user-emacs-directory))
 
-;; Add Custom.el which contain custom settings
+(add-to-list 'load-path
+	     (expand-file-name "site-lisp" user-emacs-directory))
+
+;; Add custom.el which contain custom settings
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; Create custom.el if it does not exist.
+(unless (file-exists-p custom-file)
+  (write-region "" "" custom-file))
+;; Load the custom.el
 (load custom-file)
 
-(require 'setup-package)
+(require 'setup-package)	;; Initialize package manager.
+(require 'setup-general)    ;; Initialize general settings and packages.
+(require 'setup-editing)    ;; Initialize editor settings and packages.
+(require 'setup-company)	;; Initialize Company.
+(require 'setup-flycheck)	;; Initialize Flycheck.
+(require 'setup-rtags)		;; Initialize RTags.
+(require 'setup-helm)		;; Initialize Helm.
+(require 'setup-projectile)	;; Initialize Projectile.
+(require 'setup-theme)		;; Initialize Emacs theme.
+(require 'setup-cedet)      ;; Initialize cedet
+(require 'setup-c-mode)     ;; Initialize C/C++ mode.
+(require 'setup-cmake-mode) ;; Initialize CMake mode.
+(require 'setup-magit)      ;; Initialize Magit.
+(require 'setup-neotree)    ;; Initialize Neotree.
+(require 'setup-eshell)
+(req-package-finish)
 
-(require 'setup-general)
-(if (version< emacs-version "24.4")
-    (require 'setup-ivy-counsel)
-  (require 'setup-helm)
-  (require 'setup-helm-gtags)
-  )
-(require 'setup-cedet)
-(require 'setup-editing)
-
-;; Add custom functions from defuns dir
-(setq defuns-dir (expand-file-name "defuns" user-emacs-directory))
-(dolist (file (directory-files defuns-dir t "\\w+"))
-  (when (file-regular-p file)
-    (load file)))
-
-;; setup shell
-(use-package shell
-  :config
-  (require 'setup-shell))
-
-;; Setup magit
-(use-package magit
-  :config
-  (require 'setup-magit))
-
-;; Setup flycheck
-(require 'setup-flycheck)
-;; Setup c style
-(require 'setup-c)
-;; Setup Docker mode
-(require 'setup-docker)
+(provide 'init)
+;;; init.el ends here
