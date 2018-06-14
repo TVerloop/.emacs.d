@@ -17,7 +17,8 @@
     	helm-ff-search-library-in-sexp t            ;; Search for library in 'require' and 'declare-function.
         helm-scroll-amount 8                        ;; Scroll amount when scrolling other window in helm session.
         helm-ff-file-name-history-use-recentf t     ;; Use recentf-list.
-        helm-echo-input-in-header-line t)           ;; Send current input in header-line.
+        helm-echo-input-in-header-line t            ;; Send current input in header-line.
+        helm-exit-idle-delay 0)
 
   (global-set-key (kbd "M-x") 'helm-M-x)
   (global-set-key (kbd "C-x C-f") 'helm-find-files)
@@ -28,14 +29,14 @@
         helm-buffers-fuzzy-matching t               ;; Enable fuzzy matching in buffers.
     	helm-recentf-fuzzy-match t                  ;; Enable fuzzy matching in recentf.
         helm-semantic-fuzzy-match t                 ;; Enable fuzzy matching in semantic.
-	    helm-imenu-fuzzy-match t)                   ;; Enable fuzzy matching in imenu.
+	helm-imenu-fuzzy-match t)                   ;; Enable fuzzy matching in imenu.
 
   (global-set-key (kbd "C-c h o") 'helm-occur)
   (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
 
   (setq helm-split-window-inside-p t        ;; Split inside slected window.
-	    helm-autoresize-max-height 50       ;; Helm buffer max 50 pixels.
-	    helm-autoresize-min-height 30)      ;; Helm buffer min 30 pixels.
+	helm-autoresize-max-height 50       ;; Helm buffer max 50 pixels.
+	helm-autoresize-min-height 30)      ;; Helm buffer min 30 pixels.
 
   ;; Autoresize helm buffer.
   (helm-autoresize-mode 1)

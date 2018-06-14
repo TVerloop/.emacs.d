@@ -9,7 +9,7 @@
 (req-package eshell
   :require exec-path-from-shell dash s cl ansi-color
   :config
-
+  (require 'em-tramp)
   (setq comint-prompt-read-only t)
 
   ;;Enable the new eshell prompt
@@ -69,11 +69,16 @@
         eshell-error-if-no-glob t
         eshell-hist-ignoredups t
         eshell-save-history-on-exit t
-        eshell-prefer-lisp-functions nil
+        eshell-prefer-lisp-functions t
+        eshell-prefer-lisp-variables t
+        eshell-banner-message ""
+        password-cache t
+        password-cache-expiry 3600
         eshell-destroy-buffer-when-process-dies t)
 
   (add-hook 'eshell-mode-hook
             (lambda ()
+              (linum-mode -1)
               (eshell-cmpl-initialize)
               (define-key eshell-mode-map [remap eshell-pcomplete] 'helm-esh-pcomplete)
               (define-key eshell-mode-map (kbd "M-p") 'helm-eshell-history)
