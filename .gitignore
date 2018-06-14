@@ -99,3 +99,4 @@ ac-comphist.dat
 network-security.data
 
 # End of https://www.gitignore.io/api/elisp,emacs
+custom.el

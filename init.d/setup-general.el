@@ -40,9 +40,6 @@
 	  (lambda () (interactive)
 	    (setq show-trailing-whitespace 1)))
 
-;; Set font 9p and monospace.
-(set-face-attribute 'default nil :height 90 :family "monospace")
-
 ;; F5 to compile.
 (global-set-key (kbd "<f5>") (lambda ()
 			       (interactive)
