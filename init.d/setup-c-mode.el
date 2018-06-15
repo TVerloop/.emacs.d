@@ -14,13 +14,11 @@
                (c-offsets-alist . ((innamespace . [0])))        ;; No indentation in namespaces.
                (c-offsets-alist . ((inextern-lang . [0])))))    ;; No indentation in extern "C" blocks.
 
-(req-package cc-mode
-  :require smartparens
+(req-package smartparens
   :config
-  (defun c-style-setup ()
-    (smartparens-mode 1))
-  (add-hook 'c-mode-hook 'c-style-setup)
-  (add-hook 'c++-mode-hook 'c-style-setup))
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (smartparens-mode 1))))
 
 (provide 'setup-c-mode)
 ;;; setup-c-mode.el ends here

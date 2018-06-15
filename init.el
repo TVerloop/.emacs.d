@@ -1,4 +1,7 @@
-;;; Package --- summary
+;;; init.el --- Entrypoint of emacs.
+;;;
+;;; Author: Tom.Verloop <T93.Verloop@gmail.com>
+;;; URL:    https://github.com/TVerloop/.emacs.d
 ;;;
 ;;; Commentary:
 ;;;
@@ -6,7 +9,6 @@
 
 (package-initialize)
 
-;; Add dependencies to load path
 (add-to-list 'load-path
 	     (expand-file-name "init.d" user-emacs-directory))
 

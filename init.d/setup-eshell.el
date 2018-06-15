@@ -13,7 +13,8 @@
   (setq comint-prompt-read-only t)
 
   ;;Enable the new eshell prompt
-  (setq eshell-prompt-regexp "└─\\[.+\\]━\\$ "
+  (setq eshell-banner-message ""
+        eshell-prompt-regexp "└─\\[.+\\]━\\$ "
         eshell-prompt-function
         (lambda ()
           (concat
@@ -49,7 +50,6 @@
            (propertize "@" 'face '(:foreground "#c678dd" :height 1.1 :weight ultra-bold))
            ;; Hostname
            (propertize (system-name) 'face '(:foreground "#c678dd" :height 1.1 :weight ultra-bold))
-
            (propertize " ]━$" 'face '(:foreground "#51afef" :height 1.1 :weight ultra-bold))
            (propertize " "))))
 
@@ -71,7 +71,6 @@
         eshell-save-history-on-exit t
         eshell-prefer-lisp-functions t
         eshell-prefer-lisp-variables t
-        eshell-banner-message ""
         password-cache t
         password-cache-expiry 3600
         eshell-destroy-buffer-when-process-dies t)
