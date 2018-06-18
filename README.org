@@ -1,0 +1,39 @@
+* .emacs.d
+** An emacs configuration with a main focus on C/C++
+
+** Getting started
+
+   1. $ git clone https://github.com/TVerloop/.emacs.d.git ~/.emacs.d
+   2. $ emacs
+   3. ???
+   4. profit.
+
+** Prerequisites
+
+   Following applications are required to use this configuration.
+
+*** [[https://www.gu.org/software/emacs/][emacs]] The editor.
+*** [[https://github.com/Andersbakken/rtags][RTags]] C/C++ indexing.
+*** [[https://git-scm.com/][Git]]   Version control.
+
+** Featured packages
+
+   This configuration mainly features the following packages.
+
+*** [[https://company-mode.github.io][company-mode]] Auto completion.
+*** [[https://github.com/flycheck/flycheck][flycheck]]     Syntax checking.
+*** [[https://github.com/emacs-helm/helm][helm]]         Incremental completion of selections.
+*** [[https://magit.vc][magit]]        Git interface.
+*** [[https://github.com/jaypei/emacs-neotree][neotree]]      Tree filebrowser.
+*** [[https://github.com/Andersbakken/rtags][RTags]]        C/C++ indexing.
+*** [[https://github.com/hlissner/emacs-doom-themes][Doom themes]]  Doom color themes.
+*** And more...
+
+** Additional information
+
+*** Neotree icons.
+
+    Neotree has been configured to use the icons from all-the-icons.
+all-the-icons does not defaultly download the fonts required.
+to do this "M-x all-the-icons-install-fonts". 
+This will download the necessary fonts.
