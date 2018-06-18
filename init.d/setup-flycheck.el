@@ -10,13 +10,16 @@
 (req-package flycheck
   :require
   :config
+
+  (global-flycheck-mode)
   ;; Enable cppcheck as secondary checker.
-  (defun setup-flycheck-cppcheck ()
-    (setq flycheck-cppcheck-checks "all")
-    (flycheck-add-next-checker 'rtags 'c/c++-cppcheck))
-  (add-hook 'c-mode-hook 'setup-flycheck-cppcheck)
-  (add-hook 'c++-mode-hook 'setup-flycheck-cppcheck)
-  (global-flycheck-mode))
+
+  (add-hook 'c-mode-common-hook
+            (lambda ()
+              (if (derived-mode-p 'c-mode 'c++-mode)
+                  (progn
+                    (setq flycheck-cppcheck-checks "all")
+                    (flycheck-add-next-checker 'rtags 'c/c++-cppcheck))))))
 
 (provide 'setup-flycheck)
 ;;; setup-flycheck ends here
