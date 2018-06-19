@@ -17,8 +17,8 @@
 
 (add-hook 'c-mode-common-hook
           (lambda ()
-            (if (derived-mode-p 'c-mode 'c++-mode
-                                (c-set-style "c-style")))))
+            (if (derived-mode-p 'c-mode 'c++-mode)
+                (c-set-style "c-style"))))
 
 (req-package smartparens
   :config
