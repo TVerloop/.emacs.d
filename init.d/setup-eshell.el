@@ -10,10 +10,18 @@
   :require exec-path-from-shell dash s cl ansi-color
   :config
   (require 'em-tramp)
-  (setq comint-prompt-read-only t)
 
-  ;;Enable the new eshell prompt
-  (setq eshell-banner-message ""
+  (setq password-cache t
+        password-cache-expiry 3600)
+
+  (with-eval-after-load 'esh-module
+    ;; Don't print the banner.
+    (delq 'eshell-banner eshell-modules-list)
+    (push 'eshell-tramp eshell-modules-list))
+
+  (setq comint-prompt-read-only t
+        eshell-ls-use-colors t
+        eshell-banner-message ""
         eshell-prompt-regexp "└─\\[.+\\]━\\$ "
         eshell-prompt-function
         (lambda ()
@@ -71,9 +79,11 @@
         eshell-save-history-on-exit t
         eshell-prefer-lisp-functions t
         eshell-prefer-lisp-variables t
-        password-cache t
-        password-cache-expiry 3600
         eshell-destroy-buffer-when-process-dies t)
+
+  (add-hook 'eshell-alias-load-hook
+            (lambda ()
+              (eshell/alias "sudo" "sudo $*")))
 
   (add-hook 'eshell-mode-hook
             (lambda ()
