@@ -6,6 +6,9 @@
 
 (require 'req-package)
 
+(defvar neotree/previous-directory
+  nil)
+
 (req-package neotree
   :require all-the-icons
   :config
@@ -21,7 +24,7 @@
   ;; Open neotree at startup.
   (add-hook 'after-init-hook
             (lambda ()
-              (neotree-toggle)
+              (neotree-show)
               (other-window 1)
               )
             )

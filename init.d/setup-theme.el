@@ -27,8 +27,9 @@
 
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
-  ;; Set font 9p and monospace.
-  (set-face-attribute 'default nil :font "Hack" :height 90)
+
+  ;;Hack font 9p
+  (set-frame-font "Hack-9")
 
   (load-theme 'doom-one t)
 
