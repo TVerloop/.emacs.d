@@ -19,7 +19,9 @@
 (prefer-coding-system 'utf-8)
 
 ;; Default indenting use spaces.
-(setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil
+              ;; Tabs stops every 4 characters.
+              tab-stop-list (number-sequence 4 120 4))
 
 ;; Typing with a selection overwrites the selection.
 (delete-selection-mode)
