@@ -28,8 +28,8 @@
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
 
-  ;;Hack font 9p
-  (set-frame-font "Hack-9")
+  (add-to-list 'default-frame-alist
+             '(font . "hack-9"))
 
   (load-theme 'doom-one t)
 
