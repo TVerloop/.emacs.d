@@ -36,6 +36,7 @@
 (require 'setup-neotree)    ;; Initialize Neotree.
 (require 'setup-eshell)
 (require 'setup-org-mode)
+(require 'setup-autoinsert)
 
 (req-package-finish)
 
