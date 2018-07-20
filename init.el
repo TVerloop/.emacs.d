@@ -7,13 +7,12 @@
 ;;;
 ;;; Code:
 
-(package-initialize)
-
 (add-to-list 'load-path
 	     (expand-file-name "init.d" user-emacs-directory))
 
 ;; Add custom.el which contain custom settings
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
 ;; Create custom.el if it does not exist.
 (unless (file-exists-p custom-file)
   (write-region "" "" custom-file))
