@@ -12,7 +12,7 @@
   ;; Enable CMake Mode when in file "CMakelists.txt" or "*.cmake"
   (setq auto-mode-alist (append
                          '(("CMakeLists\\.txt\\'" . cmake-mode))
-                         '(("\\,cmake\\'" . cmake-mode))
+                         '(("\\.cmake\\'" . cmake-mode))
                          auto-mode-alist))
 
   (add-hook 'cmake-mode-hook (lambda ()
