@@ -11,7 +11,7 @@
   	("marmalade" . "https://marmalade-repo.org/packages/")
   	("melpa" . "https://melpa.org/packages/")))
 
-;(package-initialize)
+(package-initialize)
 
 (when (not package-archive-contents)
     (package-refresh-contents))
