@@ -9,7 +9,7 @@
 
 ;;; Code:
 
-(use-package autoinsert
+(req-package autoinsert
   :require helm
   :config
 
