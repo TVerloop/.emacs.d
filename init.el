@@ -30,6 +30,7 @@
 (require 'setup-theme)	    ;; Initialize Emacs theme.
 (require 'setup-cedet)      ;; Initialize cedet
 (require 'setup-c-mode)     ;; Initialize C/C++ mode.
+(require 'setup-rust-mode)
 (require 'setup-cmake-mode) ;; Initialize CMake mode.
 (require 'setup-magit)      ;; Initialize Magit.
 (require 'setup-neotree)    ;; Initialize Neotree.

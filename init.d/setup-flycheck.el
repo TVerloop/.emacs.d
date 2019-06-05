@@ -8,11 +8,13 @@
 
 ;; Flycheck symantics checking.
 (req-package flycheck
-  :require
+  :require flycheck-rust
   :config
 
   (global-flycheck-mode)
   ;; Enable cppcheck as secondary checker.
+
+  (add-hook 'rust-mode-hook #'flycheck-rust-setup)
 
   (add-hook 'c-mode-common-hook
             (lambda ()
